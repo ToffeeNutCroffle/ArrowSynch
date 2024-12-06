@@ -7,10 +7,12 @@ public class ShowerBeat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(RightSpawn(1.5f));
-        StartCoroutine(LeftSpawn(0.5f));
-        StartCoroutine(UpSpawn(1));
-        StartCoroutine(DownSpawn(2));
+        //for every note, it cost 3.6sec to be PERFECT
+
+        //StartCoroutine(LeftSpawn(0));
+        //StartCoroutine(RightSpawn(0));  
+        //StartCoroutine(UpSpawn(0));
+        StartCoroutine(DownSpawn(0));
 
     }
 

@@ -83,14 +83,14 @@ public class BeatController : MonoBehaviour
 
     private GameObject CreateUp()
     {
-        GameObject poolgo = Instantiate(Arrow, new Vector3(0,13,-1), Quaternion.Euler(0,0,90));
+        GameObject poolgo = Instantiate(Arrow, new Vector3(0,18,-1), Quaternion.Euler(0,0,90));
         poolgo.GetComponent<NoteController>().Pool = this.PoolUp;
         return poolgo;
     }
 
     private GameObject CreateDown()
     {
-        GameObject poolgo = Instantiate(Arrow, new Vector3(0,-13,-1), Quaternion.Euler(0,0,270));
+        GameObject poolgo = Instantiate(Arrow, new Vector3(0,-8,-1), Quaternion.Euler(0,0,270));
         poolgo.GetComponent<NoteController>().Pool = this.PoolDown;
         return poolgo;
     }
