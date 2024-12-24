@@ -10,7 +10,9 @@ public class NoteController : MonoBehaviour
     public KeyCode keyToPressL;
     public Sprite ArrowSP;
     public float BeatTempo;
-    
+    //use for check time
+    float time;
+
     public IObjectPool<GameObject> Pool {get; set;}
 
     public enum Direction
