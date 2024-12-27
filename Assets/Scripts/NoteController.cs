@@ -63,6 +63,7 @@ public class NoteController : MonoBehaviour
             gameObject.SetActive(false);
             ResetPosition(state);
             Pool.Release(this.gameObject);
+            GameManager.instance.Miss();
             
         }
     }
@@ -81,6 +82,18 @@ public class NoteController : MonoBehaviour
         {
             if(canBePressed==true)
             {
+                if(this.transform.position.y==5)
+                {
+                    if(Mathf.Abs(this.transform.position.x)>=1.6 || Mathf.Abs(this.transform.position.x)<=1.4)
+                    {
+                        GameManager.instance.Normal();
+                    }
+                    else
+                    {
+                        GameManager.instance.Perfect();
+                    }
+                }
+               
                 gameObject.SetActive(false);
                 ResetPosition(state);
                 Pool.Release(this.gameObject);
