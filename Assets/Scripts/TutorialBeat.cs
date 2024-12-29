@@ -2,12 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Every Coroutine have to start from 1!!!!!!!!!
+//TODO-뭐하긴 비트깎아야지
+
 public class TutorialBeat : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(LeftSpawn(0));
+        StartCoroutine(LeftSpawn(1));
+        StartCoroutine(RightSpawn(1.3f));
+        StartCoroutine(UpSpawn(2));
+        StartCoroutine(DownSpawn(2.7f));
+ 
     }
 
     // Update is called once per frame

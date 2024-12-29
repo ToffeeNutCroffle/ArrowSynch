@@ -8,8 +8,10 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public int perfect=0;
     public int miss=0;
-    public int normal=0;
+    public int good=0;
     public int combo=0;
+    public float systemtime;
+    public float Beat;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+       systemtime+=Time.deltaTime;
     }
 
     public void Perfect()
@@ -37,7 +39,7 @@ public class GameManager : MonoBehaviour
 
     public void Normal()
     {
-        normal+=1;
+        good+=1;
         combo+=1;
     }
 }

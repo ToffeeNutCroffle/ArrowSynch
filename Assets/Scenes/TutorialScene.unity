@@ -204,7 +204,7 @@ Transform:
   m_GameObject: {fileID: 42740288}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.5, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -332,8 +332,10 @@ MonoBehaviour:
   theMusic: {fileID: 515992357}
   perfect: 0
   miss: 0
-  normal: 0
+  good: 0
   combo: 0
+  systemtime: 0
+  Beat: 163
 --- !u!4 &47396400
 Transform:
   m_ObjectHideFlags: 0
@@ -615,7 +617,7 @@ Transform:
   m_GameObject: {fileID: 335185279}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.5, z: 0}
+  m_LocalPosition: {x: 0, y: -1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -790,7 +792,7 @@ Transform:
   m_GameObject: {fileID: 450328914}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5, y: 5, z: 0}
+  m_LocalPosition: {x: -1.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1098,7 +1100,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2333,7 +2335,7 @@ Transform:
   m_GameObject: {fileID: 1954822625}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 5, z: 0}
+  m_LocalPosition: {x: 1.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2454,7 +2456,7 @@ Transform:
   m_GameObject: {fileID: 1969341828}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2969,12 +2971,16 @@ PrefabInstance:
       value: 0.42
       objectReference: {fileID: 0}
     - target: {fileID: 6845866574022871915, guid: ab80713cd3d84bc47b117a7ad364a0dd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6845866574022871915, guid: ab80713cd3d84bc47b117a7ad364a0dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.39
+      value: -8.84
       objectReference: {fileID: 0}
     - target: {fileID: 6845866574022871915, guid: ab80713cd3d84bc47b117a7ad364a0dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.79
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 6845866574022871915, guid: ab80713cd3d84bc47b117a7ad364a0dd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2982,7 +2988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6845866574022871915, guid: ab80713cd3d84bc47b117a7ad364a0dd, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 6845866574022871915, guid: ab80713cd3d84bc47b117a7ad364a0dd, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2994,7 +3000,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6845866574022871915, guid: ab80713cd3d84bc47b117a7ad364a0dd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 6845866574022871915, guid: ab80713cd3d84bc47b117a7ad364a0dd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3006,7 +3012,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6845866574022871915, guid: ab80713cd3d84bc47b117a7ad364a0dd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 7469190958553799651, guid: ab80713cd3d84bc47b117a7ad364a0dd, type: 3}
       propertyPath: BeatTempo

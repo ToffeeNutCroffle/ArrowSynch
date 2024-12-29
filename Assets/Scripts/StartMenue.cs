@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//TODO-OpuionButton의 음량 조절 UI 구현
+
 public class StartMenue : MonoBehaviour
 {
     // Start is called before the first frame update
     public void StartButton()
     {
-        SceneManager.LoadScene("Main_Menue");
+        SceneManager.LoadScene("MainScene");
     }
 
     public void OptionButton()
@@ -18,7 +20,7 @@ public class StartMenue : MonoBehaviour
 
     public void SettingButton()
     {
-         SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("TutorialScene");
     }
 
     public void ExitButton()

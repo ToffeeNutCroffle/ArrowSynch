@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
+//Every Coroutine have to start from 1!!!!!!!!!
+//TODO-판정이후 이펙트 생성
+
 public class NoteController : MonoBehaviour
 {
     public bool canBePressed;
@@ -26,7 +29,7 @@ public class NoteController : MonoBehaviour
 
     public Direction state;
 
-    void Start()
+    void Start()   
     {
         BeatTempo=BeatTempo/60f;  
         this.GetComponent<SpriteRenderer>().sprite = ArrowSP;
@@ -49,6 +52,7 @@ public class NoteController : MonoBehaviour
             case Direction.down: 
             gameObject.transform.position += new Vector3(0f, BeatTempo*Time.deltaTime ,0f); break;
         }
+        time+=Time.deltaTime;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -82,9 +86,13 @@ public class NoteController : MonoBehaviour
         {
             if(canBePressed==true)
             {
-                if(this.transform.position.y==5)
+                if(this.transform.position.y==0)
                 {
-                    if(Mathf.Abs(this.transform.position.x)>=1.6 || Mathf.Abs(this.transform.position.x)<=1.4)
+                    if(Mathf.Abs(this.transform.position.x) >=2 || Mathf.Abs(this.transform.position.x) <= 1)
+                    {
+                        GameManager.instance.Miss();
+                    }
+                    else if(Mathf.Abs(this.transform.position.x) >= 1.7 || Mathf.Abs(this.transform.position.x) <= 1.3)
                     {
                         GameManager.instance.Normal();
                     }
@@ -93,10 +101,28 @@ public class NoteController : MonoBehaviour
                         GameManager.instance.Perfect();
                     }
                 }
+
+                else if(this.transform.position.x==0)
+                {
+                    if(Mathf.Abs(this.transform.position.y)>=2 || Mathf.Abs(this.transform.position.y)<=1)
+                    {
+
+                    }
+                    else if(Mathf.Abs(this.transform.position.y) >= 1.7 || Mathf.Abs(this.transform.position.y) <= 1.3)
+                    {
+                        GameManager.instance.Normal();
+                    }
+                    else 
+                    {
+                        GameManager.instance.Perfect();
+                    }
+                }  
                
                 gameObject.SetActive(false);
                 ResetPosition(state);
                 Pool.Release(this.gameObject);
+                //Debug.Log(time);
+                Debug.Log(GameManager.instance.systemtime);
             }
         }
       
@@ -106,10 +132,10 @@ public class NoteController : MonoBehaviour
     {
         switch(dir)
         {
-            case Direction.up: gameObject.transform.position=new Vector3(0,18,-1); break;
-            case Direction.right: gameObject.transform.position=new Vector3(13,5,-1); break;
-            case Direction.left: gameObject.transform.position=new Vector3(-13,5,-1); break;
-            case Direction.down: gameObject.transform.position=new Vector3(0,-8,-1); break;
+            case Direction.up: gameObject.transform.position=new Vector3(0,13,-1); break;
+            case Direction.right: gameObject.transform.position=new Vector3(13,0,-1); break;
+            case Direction.left: gameObject.transform.position=new Vector3(-13,0,-1); break;
+            case Direction.down: gameObject.transform.position=new Vector3(0,13-1); break;
         } 
     }
 }
