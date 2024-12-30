@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
-//Every Coroutine have to start from 1!!!!!!!!!
 //TODO-판정이후 이펙트 생성
 
 public class NoteController : MonoBehaviour
@@ -36,21 +35,24 @@ public class NoteController : MonoBehaviour
     }
 
     void Update()
-    {
-        this.CheckHit();
-        switch(state)
+    {   
+        if(GameManager.instance.pauseOn==false)
         {
-            case Direction.up: 
-            gameObject.transform.position -= new Vector3(0f, BeatTempo*Time.deltaTime ,0f); break;
+            this.CheckHit();
+            switch(state)
+            {
+                case Direction.up: 
+                gameObject.transform.position -= new Vector3(0f, BeatTempo*Time.deltaTime ,0f); break;
             
-            case Direction.right: 
-            gameObject.transform.position -= new Vector3(BeatTempo*Time.deltaTime, 0f ,0f); break;
+                case Direction.right: 
+                gameObject.transform.position -= new Vector3(BeatTempo*Time.deltaTime, 0f ,0f); break;
 
-            case Direction.left: 
-            gameObject.transform.position += new Vector3(BeatTempo*Time.deltaTime, 0f ,0f); break;
+                case Direction.left: 
+                gameObject.transform.position += new Vector3(BeatTempo*Time.deltaTime, 0f ,0f); break;
 
-            case Direction.down: 
-            gameObject.transform.position += new Vector3(0f, BeatTempo*Time.deltaTime ,0f); break;
+                case Direction.down: 
+                gameObject.transform.position += new Vector3(0f, BeatTempo*Time.deltaTime ,0f); break;
+            }
         }
         time+=Time.deltaTime;
     }

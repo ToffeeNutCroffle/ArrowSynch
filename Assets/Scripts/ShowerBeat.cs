@@ -24,25 +24,25 @@ public class ShowerBeat : MonoBehaviour
     //코루틴 생성
     public IEnumerator LeftSpawn(float time)
     {
-        yield return new WaitForSecondsRealtime(time);
+        yield return new WaitForSeconds(time);
         GameObject LeftArrow = BeatController.instance.PoolLeft.Get();
     }
 
     public IEnumerator RightSpawn(float time)
     {
-        yield return new WaitForSecondsRealtime(time);
+        yield return new WaitForSeconds(time);
         GameObject RightArrow = BeatController.instance.PoolRight.Get();
     }
 
     public IEnumerator UpSpawn(float time)
     {
-        yield return new WaitForSecondsRealtime(time);
+        yield return new WaitForSeconds(time);
         GameObject UptArrow = BeatController.instance.PoolUp.Get();
     }
 
     public IEnumerator DownSpawn(float time)
     {
-        yield return new WaitForSecondsRealtime(time);
+        yield return new WaitForSeconds(time);
         GameObject DownArrow = BeatController.instance.PoolDown.Get();
     }
 }

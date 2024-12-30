@@ -19,14 +19,17 @@ public class ButtonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(keyToPressR) || Input.GetKeyDown(keyToPressL))
+        if(GameManager.instance.pauseOn==false)
         {
+            if(Input.GetKeyDown(keyToPressR) || Input.GetKeyDown(keyToPressL))
+            {
             theSR.sprite = preesedImage;
-        }
+            }
 
-        if(Input.GetKeyUp(keyToPressL) || Input.GetKeyUp(keyToPressR))
-        {
-            theSR.sprite= defaultImage;
+            if(Input.GetKeyUp(keyToPressL) || Input.GetKeyUp(keyToPressR))
+            {
+                theSR.sprite= defaultImage;
+            }
         }
     }
 }

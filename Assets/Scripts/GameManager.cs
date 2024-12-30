@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//TODO-일시정지 화면 구현
 public class GameManager : MonoBehaviour
 {
     public AudioSource theMusic;
@@ -12,6 +13,9 @@ public class GameManager : MonoBehaviour
     public int combo=0;
     public float systemtime;
     public float Beat;
+
+    public KeyCode pause;
+    public bool pauseOn=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +27,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
        systemtime+=Time.deltaTime;
+       CheckPause();
     }
 
     public void Perfect()
@@ -41,5 +46,24 @@ public class GameManager : MonoBehaviour
     {
         good+=1;
         combo+=1;
+    }
+
+    public void CheckPause()
+    {
+        if(Input.GetKeyDown(pause) && pauseOn==false)
+        {
+            theMusic.Pause();            
+            Time.timeScale=0;
+            pauseOn=true;
+            Debug.Log("PAUSE!");
+        }
+
+        else if(Input.GetKeyDown(pause) && pauseOn==true)
+        {
+            theMusic.UnPause();
+            Time.timeScale=1;
+            pauseOn=false;
+            Debug.Log("RESTART!");
+        }
     }
 }

@@ -336,6 +336,8 @@ MonoBehaviour:
   combo: 0
   systemtime: 0
   Beat: 163
+  pause: 27
+  pauseOn: 0
 --- !u!4 &47396400
 Transform:
   m_ObjectHideFlags: 0
