@@ -7,15 +7,26 @@ public class BeatController : MonoBehaviour
 {
     public GameObject Arrow;
     public static BeatController instance;
-    public int DefaultCapacity = 15;
-    public int MaxPoolSize = 20;
+    public int DefaultCapacity = 10;
+    public int MaxPoolSize = 15;
 
+    public int EffectCapcity = 7;
+    public int MaxEffect = 10;
+
+    public GameObject goodeffect;
+    public GameObject perfecteffect;
+    public GameObject missEffect;
     //4종류의 pool 정의
     public IObjectPool<GameObject> PoolLeft{get; set;}
     public IObjectPool<GameObject> PoolRight{get; set;}
     public IObjectPool<GameObject> PoolUp{get; set;}
     public IObjectPool<GameObject> PoolDown{get; set;}
     
+    //effect pool 생성
+    public IObjectPool<GameObject> Poolgood{get; set;}
+    public IObjectPool<GameObject> Poolperfect{get; set;}
+    public IObjectPool<GameObject> Poolmiss{get; set;}
+
     private void Awake()
     {
         if(instance==null) instance=this;
@@ -63,7 +74,11 @@ public class BeatController : MonoBehaviour
             notedown.keyToPressR=KeyCode.DownArrow;
             notedown.state = NoteController.Direction.down;
             notedown.Pool.Release(notedown.gameObject);            
+        }
 
+        for(int j=0; j<EffectCapcity; j++)
+        {
+            
         }
     }   
 
@@ -94,6 +109,8 @@ public class BeatController : MonoBehaviour
         poolgo.GetComponent<NoteController>().Pool = this.PoolDown;
         return poolgo;
     }
+
+    
 
 
     private void TakePool(GameObject poolgo)

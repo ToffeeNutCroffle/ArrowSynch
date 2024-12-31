@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public int good=0;
     public int combo=0;
     public float systemtime;
-    public float Beat;
+    public float beat;
 
     public KeyCode pause;
     public bool pauseOn=false;
