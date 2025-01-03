@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
-
+//BeatController라고 쓰고 풀링매니저라고 읽는다
 public class BeatController : MonoBehaviour
 {
     public GameObject Arrow;
@@ -10,12 +10,13 @@ public class BeatController : MonoBehaviour
     public int DefaultCapacity = 10;
     public int MaxPoolSize = 15;
 
-    public int EffectCapcity = 7;
-    public int MaxEffect = 10;
+    public int EffectCapacity = 3;
+    public int MaxEffect = 5;
 
     public GameObject goodeffect;
     public GameObject perfecteffect;
-    public GameObject missEffect;
+    public GameObject misseffect;
+
     //4종류의 pool 정의
     public IObjectPool<GameObject> PoolLeft{get; set;}
     public IObjectPool<GameObject> PoolRight{get; set;}
@@ -23,9 +24,9 @@ public class BeatController : MonoBehaviour
     public IObjectPool<GameObject> PoolDown{get; set;}
     
     //effect pool 생성
-    public IObjectPool<GameObject> Poolgood{get; set;}
-    public IObjectPool<GameObject> Poolperfect{get; set;}
-    public IObjectPool<GameObject> Poolmiss{get; set;}
+    public IObjectPool<GameObject> PoolGood{get; set;}
+    public IObjectPool<GameObject> PoolPerfect{get; set;}
+    public IObjectPool<GameObject> PoolMiss{get; set;}
 
     private void Awake()
     {
@@ -37,6 +38,7 @@ public class BeatController : MonoBehaviour
     
     private void Init()
     {
+        //4종 노트 풀링
         PoolLeft = new ObjectPool<GameObject>(CreateLeft,TakePool,ReturnPool,DestroyObject,
         true, DefaultCapacity,MaxPoolSize);
 
@@ -49,6 +51,18 @@ public class BeatController : MonoBehaviour
         PoolDown = new ObjectPool<GameObject>(CreateDown,TakePool,ReturnPool,DestroyObject,
         true, DefaultCapacity,MaxPoolSize);
 
+        //3중 판정 이펙트 풀링
+        
+        PoolGood = new ObjectPool<GameObject>(CreateGood,TakePool,ReturnPool,DestroyObject,
+        true, EffectCapacity,MaxEffect);
+
+        PoolPerfect = new ObjectPool<GameObject>(CreatePefect,TakePool,ReturnPool,DestroyObject,
+        true, EffectCapacity,MaxEffect);
+
+        PoolMiss = new ObjectPool<GameObject>(CreateMiss,TakePool,ReturnPool,DestroyObject,
+        true, EffectCapacity,MaxEffect);
+        
+        //NoteController에서 쉽게 풀링으로 접근하기 위해 하는 과정
         for(int i=0; i<DefaultCapacity; i++)
         {
             NoteController noteleft = CreateLeft().GetComponent<NoteController>();
@@ -75,11 +89,20 @@ public class BeatController : MonoBehaviour
             notedown.state = NoteController.Direction.down;
             notedown.Pool.Release(notedown.gameObject);            
         }
-
-        for(int j=0; j<EffectCapcity; j++)
+        
+        for(int j=0; j<EffectCapacity; j++)
         {
-            
+            EffectPool misscontroller=CreateMiss().GetComponent<EffectPool>();
+            misscontroller.Pool.Release(misscontroller.gameObject);
+
+            EffectPool perfectcontroller=CreatePefect().GetComponent<EffectPool>();
+            perfectcontroller.Pool.Release(perfectcontroller.gameObject);
+
+            EffectPool goodcontroller=CreateGood().GetComponent<EffectPool>();
+            goodcontroller.Pool.Release(goodcontroller.gameObject);
+
         }
+        
     }   
 
     private GameObject CreateLeft()
@@ -110,7 +133,29 @@ public class BeatController : MonoBehaviour
         return poolgo;
     }
 
-    
+    private GameObject CreateGood()
+    {
+        GameObject poolgo = Instantiate(goodeffect, new Vector3(13,13,-1),Quaternion.identity);
+        poolgo.GetComponent<EffectPool>().Pool = this.PoolGood;
+        return poolgo;
+    }
+
+
+    private GameObject CreatePefect()
+    {
+        GameObject poolgo = Instantiate(perfecteffect, new Vector3(13,13,-1),Quaternion.identity);
+        poolgo.GetComponent<EffectPool>().Pool = this.PoolPerfect;
+        return poolgo;
+    }
+
+
+    private GameObject CreateMiss()
+    {
+        GameObject poolgo = Instantiate(misseffect, new Vector3(13,13,-1),Quaternion.identity);
+        poolgo.GetComponent<EffectPool>().Pool = this.PoolMiss;
+        return poolgo;
+    }
+
 
 
     private void TakePool(GameObject poolgo)

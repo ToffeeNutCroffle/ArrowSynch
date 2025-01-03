@@ -11,20 +11,14 @@ public class TutorialBeat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(LeftSpawn(1));
-        StartCoroutine(RightSpawn(1.3f));
-        StartCoroutine(UpSpawn(2));
-        StartCoroutine(DownSpawn(2.7f));
- 
+        for(int i=0; i<=30; i++) 
+        {
+            StartCoroutine(LeftSpawn(i));
+            StartCoroutine(UpSpawn(i+0.5f));
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-        //코루틴 생성
+    //코루틴 생성
     public IEnumerator LeftSpawn(float time)
     {
         yield return new WaitForSeconds(time);

@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
 
     public KeyCode pause;
     public bool pauseOn=false;
+
+    public EffectPool test;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,22 +32,31 @@ public class GameManager : MonoBehaviour
        CheckPause();
     }
 
-    public void Perfect()
+    public void Perfect(float x,float y)
     {
         perfect+=1;
         combo+=1;
+        GameObject Effect = BeatController.instance.PoolPerfect.Get();
+        Effect.GetComponent<EffectPool>().death=false;
+        Effect.transform.position=new Vector3(0,0,-1);
     }
     
-    public void Miss()
+    public void Miss(float x, float y)
     {
         miss+=1;
         combo=0;
+        GameObject Effect = BeatController.instance.PoolMiss.Get();
+        Effect.GetComponent<EffectPool>().death=false;
+        Effect.transform.position=new Vector3(0,0,-1);
     }
 
-    public void Normal()
+    public void Good(float x, float y)
     {
         good+=1;
         combo+=1;
+        GameObject Effect = BeatController.instance.PoolGood.Get();
+        Effect.GetComponent<EffectPool>().death=false;
+        Effect.transform.position=new Vector3(0,0,-1);
     }
 
     public void CheckPause()
@@ -65,5 +76,23 @@ public class GameManager : MonoBehaviour
             pauseOn=false;
             Debug.Log("RESTART!");
         }
+    }
+
+    public IEnumerator MissReturn(GameObject obj)
+    {
+        yield return new WaitForSeconds(1);
+        BeatController.instance.PoolMiss.Release(obj);
+    }
+
+    public IEnumerator GoodReturn(GameObject obj)
+    {
+        yield return new WaitForSeconds(1);
+        BeatController.instance.PoolGood.Release(obj);
+    }
+
+    public IEnumerator PerfectReturn(GameObject obj)
+    {
+        yield return new WaitForSeconds(1);
+        BeatController.instance.PoolPerfect.Release(obj);
     }
 }

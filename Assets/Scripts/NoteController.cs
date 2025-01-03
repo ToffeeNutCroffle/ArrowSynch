@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
-//TODO-판정이후 이펙트 생성
+//TODO-한번에 하나씩만 처리
 
 public class NoteController : MonoBehaviour
 {
@@ -65,12 +65,10 @@ public class NoteController : MonoBehaviour
         }
 
         else if(other.tag == "Destroy")
-        {
-            gameObject.SetActive(false);
+        { 
+            GameManager.instance.Miss(this.transform.position.x, this.transform.position.y);
             ResetPosition(state);
             Pool.Release(this.gameObject);
-            GameManager.instance.Miss();
-            
         }
     }
 
@@ -92,15 +90,15 @@ public class NoteController : MonoBehaviour
                 {
                     if(Mathf.Abs(this.transform.position.x) >=2 || Mathf.Abs(this.transform.position.x) <= 1)
                     {
-                        GameManager.instance.Miss();
+                        GameManager.instance.Miss(this.transform.position.x, 0);
                     }
                     else if(Mathf.Abs(this.transform.position.x) >= 1.7 || Mathf.Abs(this.transform.position.x) <= 1.3)
                     {
-                        GameManager.instance.Normal();
+                        GameManager.instance.Good(this.transform.position.x, 0);
                     }
                     else
                     {
-                        GameManager.instance.Perfect();
+                        GameManager.instance.Perfect(this.transform.position.x, 0);
                     }
                 }
 
@@ -108,19 +106,18 @@ public class NoteController : MonoBehaviour
                 {
                     if(Mathf.Abs(this.transform.position.y)>=2 || Mathf.Abs(this.transform.position.y)<=1)
                     {
-
+                        GameManager.instance.Miss(0, this.transform.position.y);
                     }
                     else if(Mathf.Abs(this.transform.position.y) >= 1.7 || Mathf.Abs(this.transform.position.y) <= 1.3)
                     {
-                        GameManager.instance.Normal();
+                        GameManager.instance.Good(0, this.transform.position.y);
                     }
                     else 
                     {
-                        GameManager.instance.Perfect();
+                        GameManager.instance.Perfect(0, this.transform.position.y);
                     }
                 }  
                
-                gameObject.SetActive(false);
                 ResetPosition(state);
                 Pool.Release(this.gameObject);
                 //Debug.Log(time);

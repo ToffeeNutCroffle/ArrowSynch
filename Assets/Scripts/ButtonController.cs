@@ -23,7 +23,7 @@ public class ButtonController : MonoBehaviour
         {
             if(Input.GetKeyDown(keyToPressR) || Input.GetKeyDown(keyToPressL))
             {
-            theSR.sprite = preesedImage;
+                theSR.sprite = preesedImage;
             }
 
             if(Input.GetKeyUp(keyToPressL) || Input.GetKeyUp(keyToPressR))
