@@ -10,8 +10,8 @@ public class BeatController : MonoBehaviour
     public int DefaultCapacity = 10;
     public int MaxPoolSize = 15;
 
-    public int EffectCapacity = 3;
-    public int MaxEffect = 5;
+    public int EffectCapacity = 7;
+    public int MaxEffect = 10;
 
     public GameObject goodeffect;
     public GameObject perfecteffect;
