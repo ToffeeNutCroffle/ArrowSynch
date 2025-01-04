@@ -44,15 +44,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: pause
-    uniqueID: 632464633
-    locked: 0
-  - name: pause_background
-    uniqueID: 2678948621
-    locked: 0
   - name: Arrow
     uniqueID: 2566067615
     locked: 0
   - name: background
     uniqueID: 4005105749
+    locked: 0
+  - name: pause
+    uniqueID: 632464633
     locked: 0

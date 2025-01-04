@@ -131,10 +131,10 @@ public class NoteController : MonoBehaviour
     {
         switch(dir)
         {
-            case Direction.up: gameObject.transform.position=new Vector3(0,13,-1); break;
-            case Direction.right: gameObject.transform.position=new Vector3(13,0,-1); break;
-            case Direction.left: gameObject.transform.position=new Vector3(-13,0,-1); break;
-            case Direction.down: gameObject.transform.position=new Vector3(0,13-1); break;
+            case Direction.up: gameObject.transform.position=new Vector3(0,13,1); break;
+            case Direction.right: gameObject.transform.position=new Vector3(13,0,1); break;
+            case Direction.left: gameObject.transform.position=new Vector3(-13,0,1); break;
+            case Direction.down: gameObject.transform.position=new Vector3(0,13,1); break;
         } 
     }
 }

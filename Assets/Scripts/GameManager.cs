@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     public KeyCode pause;
     public bool pauseOn=false;
 
-    public EffectPool test;
+    public GameObject pauseScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
         combo+=1;
         GameObject Effect = BeatController.instance.PoolPerfect.Get();
         Effect.GetComponent<EffectPool>().death=false;
-        Effect.transform.position=new Vector3(0,0,-1);
+        Effect.transform.position=new Vector3(0,0,1);
     }
     
     public void Miss(float x, float y)
@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
         combo=0;
         GameObject Effect = BeatController.instance.PoolMiss.Get();
         Effect.GetComponent<EffectPool>().death=false;
-        Effect.transform.position=new Vector3(0,0,-1);
+        Effect.transform.position=new Vector3(0,0,1);
     }
 
     public void Good(float x, float y)
@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
         combo+=1;
         GameObject Effect = BeatController.instance.PoolGood.Get();
         Effect.GetComponent<EffectPool>().death=false;
-        Effect.transform.position=new Vector3(0,0,-1);
+        Effect.transform.position=new Vector3(0,0,1);
     }
 
     public void CheckPause()
@@ -66,6 +66,7 @@ public class GameManager : MonoBehaviour
             theMusic.Pause();            
             Time.timeScale=0;
             pauseOn=true;
+            pauseScreen.SetActive(pauseOn);
             Debug.Log("PAUSE!");
         }
 
@@ -74,6 +75,7 @@ public class GameManager : MonoBehaviour
             theMusic.UnPause();
             Time.timeScale=1;
             pauseOn=false;
+            pauseScreen.SetActive(pauseOn);
             Debug.Log("RESTART!");
         }
     }
