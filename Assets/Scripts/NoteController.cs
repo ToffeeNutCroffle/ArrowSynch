@@ -121,7 +121,7 @@ public class NoteController : MonoBehaviour
                 ResetPosition(state);
                 Pool.Release(this.gameObject);
                 //Debug.Log(time);
-                Debug.Log(GameManager.instance.systemtime);
+                //Debug.Log(GameManager.instance.systemtime);
             }
         }
       

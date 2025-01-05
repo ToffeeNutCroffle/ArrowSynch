@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         theMusic.Play();
+        Time.timeScale=1;
     }
 
     // Update is called once per frame
@@ -76,7 +77,7 @@ public class GameManager : MonoBehaviour
             Time.timeScale=1;
             pauseOn=false;
             pauseScreen.SetActive(pauseOn);
-            Debug.Log("RESTART!");
+            Debug.Log("RESUME!");
         }
     }
 
