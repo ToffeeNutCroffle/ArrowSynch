@@ -6,7 +6,6 @@ using UnityEngine.Pool;
 public class EffectPool : MonoBehaviour
 {
     public IObjectPool<GameObject> Pool {get; set;} 
-    public static EffectPool instance;
     public float lifetime = 0;
     public bool death=true;
 
