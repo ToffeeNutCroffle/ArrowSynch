@@ -7,12 +7,16 @@ public class TestBeat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // StartCoroutine(LeftSpawn(0));
+        // StartCoroutine(DownSpawn(0.4f));
+        // StartCoroutine(RightSpawn(0.8f));
+        // StartCoroutine(UpSpawn(1.4f));
+        // StartCoroutine(LeftSpawn(1.8f));
+        // StartCoroutine(DownSpawn(2.2f));
         StartCoroutine(LeftSpawn(0));
-        StartCoroutine(DownSpawn(0.4f));
-        StartCoroutine(RightSpawn(0.8f));
-        StartCoroutine(UpSpawn(1.4f));
-        StartCoroutine(LeftSpawn(1.8f));
-        StartCoroutine(DownSpawn(2.2f));
+        StartCoroutine(LeftSpawn(0.1f));        
+        StartCoroutine(LeftSpawn(0.2f));        
+        StartCoroutine(LeftSpawn(0.3f));
     }
 
     // Update is called once per frame

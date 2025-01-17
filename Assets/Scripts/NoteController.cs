@@ -12,7 +12,7 @@ public class NoteController : MonoBehaviour
     public KeyCode keyToPressL;
     public Sprite ArrowSP;
     public float BeatTempo;
-    public int OrderNote;
+    public bool isFirst=false;
     //use for check time
     float time;
 
@@ -63,14 +63,13 @@ public class NoteController : MonoBehaviour
         if(other.tag == "Activator")
         {
             canBePressed=true;
-            GameManager.instance.order+=1;
-            this.OrderNote=GameManager.instance.order;
         }
 
         else if(other.tag == "Destroy")
         { 
             GameManager.instance.Miss(this.transform.position.x, this.transform.position.y);
             ResetPosition(state);
+            this.isFirst=false;
             Pool.Release(this.gameObject);
         }
     }
@@ -80,7 +79,6 @@ public class NoteController : MonoBehaviour
         if(other.tag =="Activator")
         {
             canBePressed=false;
-            GameManager.instance.order-=1;
         }
     }
 
@@ -88,7 +86,7 @@ public class NoteController : MonoBehaviour
     {
         if(Input.GetKeyDown(keyToPressR) || Input.GetKeyDown(keyToPressL))
         {
-            if((canBePressed==true))
+            if((canBePressed==true)&&(isFirst==true))
             {
                 if(this.transform.position.y==0)
                 {
@@ -123,6 +121,7 @@ public class NoteController : MonoBehaviour
                 }  
                
                 ResetPosition(state);
+                this.isFirst=false;
                 Pool.Release(this.gameObject);
                 //Debug.Log(time);
                 //Debug.Log(GameManager.instance.systemtime);

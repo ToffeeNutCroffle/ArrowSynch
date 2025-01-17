@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
     public int combo=0;
     public float systemtime;
     public float beat;
-    public int order=0;
 
     public KeyCode pause;
     public bool pauseOn=false;

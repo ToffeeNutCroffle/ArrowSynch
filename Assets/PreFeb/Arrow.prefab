@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1247174230335547123}
   - component: {fileID: 7469190958553799651}
   - component: {fileID: 6604278726900833112}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Arrow
   m_TagString: Arrow
   m_Icon: {fileID: 0}
@@ -103,6 +103,7 @@ MonoBehaviour:
   keyToPressL: 0
   ArrowSP: {fileID: 21300000, guid: 60bfd072918779345aef76bf7e212b42, type: 3}
   BeatTempo: 192
+  isFirst: 0
   state: 0
 --- !u!58 &6604278726900833112
 CircleCollider2D:
