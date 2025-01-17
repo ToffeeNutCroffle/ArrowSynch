@@ -18,11 +18,6 @@ public class StartMenue : MonoBehaviour
 
     }   
 
-    public void SettingButton()
-    {
-        SceneManager.LoadScene("TutorialScene");
-    }
-
     public void ExitButton()
     {
         #if UNITY_EDITOR

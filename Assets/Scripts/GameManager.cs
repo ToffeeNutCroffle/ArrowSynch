@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//TODO-일시정지 화면 구현
 public class GameManager : MonoBehaviour
 {
     public AudioSource theMusic;
@@ -13,6 +12,7 @@ public class GameManager : MonoBehaviour
     public int combo=0;
     public float systemtime;
     public float beat;
+    public int order=0;
 
     public KeyCode pause;
     public bool pauseOn=false;

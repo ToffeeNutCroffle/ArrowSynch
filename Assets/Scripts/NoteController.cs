@@ -1,4 +1,4 @@
- using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
@@ -12,6 +12,7 @@ public class NoteController : MonoBehaviour
     public KeyCode keyToPressL;
     public Sprite ArrowSP;
     public float BeatTempo;
+    public int OrderNote;
     //use for check time
     float time;
 
@@ -31,7 +32,7 @@ public class NoteController : MonoBehaviour
     void Start()   
     {
         BeatTempo=BeatTempo/60f;  
-        this.GetComponent<SpriteRenderer>().sprite = ArrowSP;
+        this.GetComponent<SpriteRenderer>().sprite = ArrowSP;   
     }
 
     void Update()
@@ -62,6 +63,8 @@ public class NoteController : MonoBehaviour
         if(other.tag == "Activator")
         {
             canBePressed=true;
+            GameManager.instance.order+=1;
+            this.OrderNote=GameManager.instance.order;
         }
 
         else if(other.tag == "Destroy")
@@ -77,6 +80,7 @@ public class NoteController : MonoBehaviour
         if(other.tag =="Activator")
         {
             canBePressed=false;
+            GameManager.instance.order-=1;
         }
     }
 
@@ -84,7 +88,7 @@ public class NoteController : MonoBehaviour
     {
         if(Input.GetKeyDown(keyToPressR) || Input.GetKeyDown(keyToPressL))
         {
-            if(canBePressed==true)
+            if((canBePressed==true))
             {
                 if(this.transform.position.y==0)
                 {

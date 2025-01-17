@@ -411,6 +411,7 @@ MonoBehaviour:
   combo: 0
   systemtime: 0
   beat: 0
+  order: 0
   pause: 27
   pauseOn: 0
   pauseScreen: {fileID: 1562206277}
@@ -2117,7 +2118,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1247174230335547123, guid: ab80713cd3d84bc47b117a7ad364a0dd, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1247174230335547123, guid: ab80713cd3d84bc47b117a7ad364a0dd, type: 3}
       propertyPath: m_SortingLayerID
@@ -2137,11 +2138,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6845866574022871915, guid: ab80713cd3d84bc47b117a7ad364a0dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.13
+      value: 5.26
       objectReference: {fileID: 0}
     - target: {fileID: 6845866574022871915, guid: ab80713cd3d84bc47b117a7ad364a0dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.31
+      value: 7.28
       objectReference: {fileID: 0}
     - target: {fileID: 6845866574022871915, guid: ab80713cd3d84bc47b117a7ad364a0dd, type: 3}
       propertyPath: m_LocalPosition.z
