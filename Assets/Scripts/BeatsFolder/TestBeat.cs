@@ -14,9 +14,6 @@ public class TestBeat : MonoBehaviour
         // StartCoroutine(LeftSpawn(1.8f));
         // StartCoroutine(DownSpawn(2.2f));
         StartCoroutine(LeftSpawn(0));
-        StartCoroutine(LeftSpawn(0.1f));        
-        StartCoroutine(LeftSpawn(0.2f));        
-        StartCoroutine(LeftSpawn(0.3f));
     }
 
     // Update is called once per frame
@@ -42,5 +39,12 @@ public class TestBeat : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         GameObject DownArrow = BeatController.instance.PoolDown.Get();
+    }
+
+    
+    public IEnumerator GameOver(float time)
+    {
+        yield return new WaitForSeconds(time);
+        GameManager.instance.ResultUI();
     }
 }

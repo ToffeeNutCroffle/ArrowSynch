@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,13 +11,21 @@ public class GameManager : MonoBehaviour
     public int miss=0;
     public int good=0;
     public int combo=0;
+    public int maxCombo=0;
     public float systemtime;
     public float beat;
+    public bool gameEnd = false;
+    //인게임 UI
+    public Text inGameScore;
+    public int score=0;
 
     public KeyCode pause;
     public bool pauseOn=false;
 
+    public Text resultText;
+
     public GameObject pauseScreen;
+    public GameObject resultScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,12 +39,18 @@ public class GameManager : MonoBehaviour
     {
        systemtime+=Time.deltaTime;
        CheckPause();
+       if(combo>=maxCombo) maxCombo=combo;
+       
+       if(gameEnd == false) inGameScore.text="Score: "+score+"\nCombo: "+ combo; 
+       else inGameScore.text="";
+
     }
 
     public void Perfect(float x,float y)
     {
         perfect+=1;
         combo+=1;
+        score+=500;
         GameObject Effect = BeatController.instance.PoolPerfect.Get();
         Effect.GetComponent<EffectPool>().death=false;
         Effect.transform.position=new Vector3(0,0,1);
@@ -54,6 +69,7 @@ public class GameManager : MonoBehaviour
     {
         good+=1;
         combo+=1;
+        score+=300;
         GameObject Effect = BeatController.instance.PoolGood.Get();
         Effect.GetComponent<EffectPool>().death=false;
         Effect.transform.position=new Vector3(0,0,1);
@@ -80,21 +96,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public IEnumerator MissReturn(GameObject obj)
+    public void ResultUI()
     {
-        yield return new WaitForSeconds(1);
-        BeatController.instance.PoolMiss.Release(obj);
-    }
-
-    public IEnumerator GoodReturn(GameObject obj)
-    {
-        yield return new WaitForSeconds(1);
-        BeatController.instance.PoolGood.Release(obj);
-    }
-
-    public IEnumerator PerfectReturn(GameObject obj)
-    {
-        yield return new WaitForSeconds(1);
-        BeatController.instance.PoolPerfect.Release(obj);
+        gameEnd=true;
+        resultText.text="         RESULT\n"+"SCORE : "+GameManager.instance.score+"\nMAX COMBO : "+GameManager.instance.maxCombo+"\nPERFECT : "+GameManager.instance.perfect+
+        "\nGOOD : "+GameManager.instance.good+"\nMISS : "+GameManager.instance.miss;
+        resultScreen.SetActive(gameEnd);
     }
 }
