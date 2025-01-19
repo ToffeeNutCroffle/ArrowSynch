@@ -15,7 +15,7 @@ public class StartMenue : MonoBehaviour
 
     public void OptionButton()
     {
-
+        //TODO-슬라이드 음량조절 캔버스
     }   
 
     public void ExitButton()
