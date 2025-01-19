@@ -14,7 +14,6 @@ public class NoteController : MonoBehaviour
     public float BeatTempo;
     public bool isFirst=false;
     //use for check time
-    float time;
 
     public IObjectPool<GameObject> Pool {get; set;}
 
@@ -55,7 +54,6 @@ public class NoteController : MonoBehaviour
                 gameObject.transform.position += new Vector3(0f, BeatTempo*Time.deltaTime ,0f); break;
             }
         }
-        time+=Time.deltaTime;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -123,8 +121,6 @@ public class NoteController : MonoBehaviour
                 ResetPosition(state);
                 this.isFirst=false;
                 Pool.Release(this.gameObject);
-                //Debug.Log(time);
-                //Debug.Log(GameManager.instance.systemtime);
             }
         }
       

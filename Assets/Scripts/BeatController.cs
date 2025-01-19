@@ -156,8 +156,6 @@ public class BeatController : MonoBehaviour
         return poolgo;
     }
 
-
-
     private void TakePool(GameObject poolgo)
     {
         poolgo.SetActive(true);
