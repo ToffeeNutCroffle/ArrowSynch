@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/AssetFromStore/TechnoGami/2d UI button/ExmpleScene/TechnoGami1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 0
-    path: Assets/Scenes/StartMenue.unity
+    path: Assets/Scenes/StartScene.unity
     guid: 2dd73cbe374c89d4cbaf27b00d1dda37
   - enabled: 0
     path: Assets/Scenes/TutorialScene.unity
