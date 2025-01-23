@@ -36,13 +36,14 @@ public class MainButtonController : MonoBehaviour
 
     public void ExitButton()
     {
-        SceneManager.LoadScene("StartScene");
+        MainManager.instance.toStart=true;
     }
 
     public void SettingButton()
     {
         //TODO-슬라이드 음량조절 캔버스
     }
+
     public void ChangeMusic(int num)
     {
         MainManager.instance.mainAudios[MainManager.instance.playingNow].Stop();

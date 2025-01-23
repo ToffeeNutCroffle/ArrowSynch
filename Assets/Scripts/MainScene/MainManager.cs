@@ -9,7 +9,12 @@ public class MainManager : MonoBehaviour
     public AudioSource[] mainAudios;
     public int playingNow;
     public bool isSelect=false; 
+    public bool toStart=false;
     public KeyCode exit; 
+    public GameObject exitUI;
+
+    //For Debug
+    public int check=0;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,18 +23,14 @@ public class MainManager : MonoBehaviour
     }
 
     void Update()
-    {
+    {        
+        ExitUIManage();
         CheckExit();
     }
 
     public void CheckExit()
     {
-        if(Input.GetKeyDown(exit) && (isSelect==false))
-        {
-            SceneManager.LoadScene("StartScene");
-        }
-
-        else if(Input.GetKeyDown(exit) && (isSelect==true))
+        if(Input.GetKeyDown(exit) && (isSelect==true))
         {
             mainAudios[playingNow].Stop();
             playingNow=0;
@@ -37,6 +38,21 @@ public class MainManager : MonoBehaviour
             isSelect=false;
         }
     }
+
+    public void ExitUIManage()
+    {
+        if((toStart==true) && Input.GetKeyDown(exit) && (isSelect==false))
+        {
+            toStart=false;
+        }
+
+        else if((toStart==false) && Input.GetKeyDown(exit) && (isSelect==false))
+        {
+            toStart=true;
+        }
+        exitUI.SetActive(toStart);
+    }
+    
 
 
 }
