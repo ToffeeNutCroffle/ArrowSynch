@@ -44,13 +44,15 @@ public class MainManager : MonoBehaviour
         if((toStart==true) && Input.GetKeyDown(exit) && (isSelect==false))
         {
             toStart=false;
+            exitUI.SetActive(toStart);
         }
 
         else if((toStart==false) && Input.GetKeyDown(exit) && (isSelect==false))
         {
             toStart=true;
+            exitUI.SetActive(toStart);
         }
-        exitUI.SetActive(toStart);
+
     }
     
 

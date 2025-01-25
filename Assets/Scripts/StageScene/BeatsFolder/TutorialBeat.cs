@@ -11,11 +11,8 @@ public class TutorialBeat : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int i=0; i<=10; i++) 
-        {
-            StartCoroutine(LeftSpawn(i));
-            StartCoroutine(UpSpawn(i+0.5f));
-        }
+        StartCoroutine(RightSpawn(0));
+        
     }
 
     //코루틴 생성
@@ -41,5 +38,11 @@ public class TutorialBeat : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         GameObject DownArrow = BeatController.instance.PoolDown.Get();
+    }
+
+    public IEnumerator GameOver(float time)
+    {
+        yield return new WaitForSeconds(time);
+        GameManager.instance.ResultUI();
     }
 }

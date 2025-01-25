@@ -18,7 +18,7 @@ public class MainButtonController : MonoBehaviour
 
     public void TutorialGo()
     {
-        if(MainManager.instance.isSelect==false)
+        if(MainManager.instance.playingNow!=1)
         {
             ChangeMusic(1);
             MainManager.instance.isSelect=true;
@@ -32,6 +32,37 @@ public class MainButtonController : MonoBehaviour
         
     }
 
+    public void WindowGo()
+    {
+        if( MainManager.instance.playingNow!=2)
+        {
+            ChangeMusic(2);
+            MainManager.instance.isSelect=true;
+            MainManager.instance.playingNow=2;
+        }
+        
+        else
+        {
+            SceneManager.LoadScene("WindowScene");
+        }
+        
+    }
+
+    public void SeptGo()
+    {
+        if(MainManager.instance.playingNow!=3)
+        {
+            ChangeMusic(3);
+            MainManager.instance.isSelect=true;
+            MainManager.instance.playingNow=3;
+        }
+        
+        else
+        {
+            SceneManager.LoadScene("SeptScene");
+        }
+        
+    }
 
 
     public void ExitButton()
