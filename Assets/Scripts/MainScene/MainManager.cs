@@ -32,6 +32,7 @@ public class MainManager : MonoBehaviour
     {
         if(Input.GetKeyDown(exit) && (isSelect==true))
         {
+            if(toStart==false) ButtonColorManager.instance.SetColorBright();   
             mainAudios[playingNow].Stop();
             playingNow=0;
             mainAudios[playingNow].Play();

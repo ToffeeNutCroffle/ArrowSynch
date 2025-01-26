@@ -10,6 +10,7 @@ public class MainButtonController : MonoBehaviour
     {
         if(MainManager.instance.isSelect==true)
         {
+            ButtonColorManager.instance.SetColorBright();
             ChangeMusic(0);
             MainManager.instance.isSelect=false;
             MainManager.instance.playingNow=0;
@@ -19,10 +20,12 @@ public class MainButtonController : MonoBehaviour
     public void TutorialGo()
     {
         if(MainManager.instance.playingNow!=1)
-        {
+        {   
+            ButtonColorManager.instance.SetColorBright();
             ChangeMusic(1);
             MainManager.instance.isSelect=true;
             MainManager.instance.playingNow=1;
+            ButtonColorManager.instance.SetColorDark(1);
         }
         
         else
@@ -36,9 +39,11 @@ public class MainButtonController : MonoBehaviour
     {
         if( MainManager.instance.playingNow!=2)
         {
+            ButtonColorManager.instance.SetColorBright();
             ChangeMusic(2);
             MainManager.instance.isSelect=true;
             MainManager.instance.playingNow=2;
+            ButtonColorManager.instance.SetColorDark(2);
         }
         
         else
@@ -52,9 +57,11 @@ public class MainButtonController : MonoBehaviour
     {
         if(MainManager.instance.playingNow!=3)
         {
+            ButtonColorManager.instance.SetColorBright();            
             ChangeMusic(3);
             MainManager.instance.isSelect=true;
             MainManager.instance.playingNow=3;
+            ButtonColorManager.instance.SetColorDark(3);
         }
         
         else
@@ -68,6 +75,7 @@ public class MainButtonController : MonoBehaviour
     public void ExitButton()
     {
         MainManager.instance.toStart=true;
+        MainManager.instance.exitUI.SetActive(true);
     }
 
     public void SettingButton()

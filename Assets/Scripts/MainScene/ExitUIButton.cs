@@ -14,5 +14,6 @@ public class ExitUIButton : MonoBehaviour
     public void CancelButton()
     {
         MainManager.instance.toStart=false;
+        MainManager.instance.exitUI.SetActive(false);
     }
 }
