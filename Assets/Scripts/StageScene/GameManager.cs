@@ -30,7 +30,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        theMusic.Play();
         Time.timeScale=1;
     }
 

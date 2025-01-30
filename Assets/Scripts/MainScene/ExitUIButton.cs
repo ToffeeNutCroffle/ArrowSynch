@@ -8,7 +8,11 @@ public class ExitUIButton : MonoBehaviour
     // Start is called before the first frame update
     public void CheckButton()
     {
-        SceneManager.LoadScene("StartScene");
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #else
+        Application.Quit();
+        #endif
     }
     
     public void CancelButton()

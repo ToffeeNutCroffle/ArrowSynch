@@ -92,7 +92,7 @@ public class NoteController : MonoBehaviour
                     {
                         GameManager.instance.Miss(this.transform.position.x, 0);
                     }
-                    else if(Mathf.Abs(this.transform.position.x) >= 1.7 || Mathf.Abs(this.transform.position.x) <= 1.3)
+                    else if(Mathf.Abs(this.transform.position.x) >= 1.8 || Mathf.Abs(this.transform.position.x) <= 1.2)
                     {
                         GameManager.instance.Good(this.transform.position.x, 0);
                     }
@@ -108,7 +108,7 @@ public class NoteController : MonoBehaviour
                     {
                         GameManager.instance.Miss(0, this.transform.position.y);
                     }
-                    else if(Mathf.Abs(this.transform.position.y) >= 1.7 || Mathf.Abs(this.transform.position.y) <= 1.3)
+                    else if(Mathf.Abs(this.transform.position.y) >= 1.8 || Mathf.Abs(this.transform.position.y) <= 1.2)
                     {
                         GameManager.instance.Good(0, this.transform.position.y);
                     }
@@ -133,7 +133,7 @@ public class NoteController : MonoBehaviour
             case Direction.up: gameObject.transform.position=new Vector3(0,13,1); break;
             case Direction.right: gameObject.transform.position=new Vector3(13,0,1); break;
             case Direction.left: gameObject.transform.position=new Vector3(-13,0,1); break;
-            case Direction.down: gameObject.transform.position=new Vector3(0,13,1); break;
+            case Direction.down: gameObject.transform.position=new Vector3(0,-13,1); break;
         } 
     }
 }
