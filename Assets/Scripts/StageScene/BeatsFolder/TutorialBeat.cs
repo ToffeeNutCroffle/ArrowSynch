@@ -54,15 +54,15 @@ public class TutorialBeat : MonoBehaviour
         StartCoroutine(LeftSpawn(16.1f));
         StartCoroutine(DownSpawn(16.5f));
 
-        StartCoroutine(RightSpawn(17.0f));
-        StartCoroutine(UpSpawn(17.4f));
-        StartCoroutine(LeftSpawn(17.8f));
-        StartCoroutine(DownSpawn(18.2f));
+        StartCoroutine(RightSpawn(16.9f));
+        StartCoroutine(UpSpawn(17.3f));
+        StartCoroutine(LeftSpawn(17.7f));
+        StartCoroutine(DownSpawn(18.1f));
 
-        StartCoroutine(RightSpawn(18.7f));
-        StartCoroutine(UpSpawn(19.1f));
-        StartCoroutine(LeftSpawn(19.5f));
-        StartCoroutine(DownSpawn(19.9f));
+        StartCoroutine(RightSpawn(18.6f));
+        StartCoroutine(UpSpawn(19.0f));
+        StartCoroutine(LeftSpawn(19.4f));
+        StartCoroutine(DownSpawn(19.8f));
         //시계
         StartCoroutine(DownSpawn(20.3f));
         StartCoroutine(LeftSpawn(20.7f));
