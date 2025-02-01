@@ -71,6 +71,24 @@ public class MainButtonController : MonoBehaviour
         
     }
 
+    public void monouiGo()
+    {
+        if(MainManager.instance.playingNow!=4)
+        {
+            ButtonColorManager.instance.SetColorBright();            
+            ChangeMusic(4);
+            MainManager.instance.isSelect=true;
+            MainManager.instance.playingNow=4;
+            ButtonColorManager.instance.SetColorDark(4);
+        }
+        
+        else
+        {
+            SceneManager.LoadScene("monouiScene");
+        }
+        
+    }
+
 
     public void ExitButton()
     {
