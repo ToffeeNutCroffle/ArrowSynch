@@ -11,6 +11,7 @@ public class MainManager : MonoBehaviour
     public bool isSelect=false; 
     public bool toStart=false;
     public KeyCode exit; 
+    public KeyCode enter;
     public GameObject exitUI;
 
     //For Debug
@@ -52,6 +53,15 @@ public class MainManager : MonoBehaviour
         {
             toStart=true;
             exitUI.SetActive(toStart);
+        }
+
+        if(toStart==true && Input.GetKeyDown(enter))
+        {
+            #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+            #else
+            Application.Quit();
+            #endif
         }
 
     }

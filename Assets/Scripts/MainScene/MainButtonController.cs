@@ -89,6 +89,24 @@ public class MainButtonController : MonoBehaviour
         
     }
 
+    public void SummerTriangleGo()
+    {
+        if(MainManager.instance.playingNow!=5)
+        {
+            ButtonColorManager.instance.SetColorBright();            
+            ChangeMusic(5);
+            MainManager.instance.isSelect=true;
+            MainManager.instance.playingNow=5;
+            ButtonColorManager.instance.SetColorDark(5);
+        }
+        
+        else
+        {
+            SceneManager.LoadScene("SummerTriangleScene");
+        }
+        
+    }
+
 
     public void ExitButton()
     {

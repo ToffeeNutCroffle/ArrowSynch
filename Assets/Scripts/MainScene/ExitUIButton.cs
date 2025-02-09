@@ -20,4 +20,9 @@ public class ExitUIButton : MonoBehaviour
         MainManager.instance.toStart=false;
         MainManager.instance.exitUI.SetActive(false);
     }
+
+    void Update()
+    {
+        
+    }
 }
