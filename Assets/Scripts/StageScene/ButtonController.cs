@@ -25,7 +25,7 @@ public class ButtonController : MonoBehaviour
             if(Input.GetKeyDown(keyToPressR) || Input.GetKeyDown(keyToPressL))
             {
                 theSR.sprite = preesedImage;
-                Debug.Log($"{keyToPressL} , {GameManager.instance.systemtime-3.6f}");
+                Debug.Log($"StartCoroutime({keyToPressL}(" + string.Format("{0:N2}",GameManager.instance.systemtime-3.6f) + "f);");
             }
 
             if(Input.GetKeyUp(keyToPressL) || Input.GetKeyUp(keyToPressR))
