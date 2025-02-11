@@ -637,7 +637,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\t\t  RESULT\nSCORE :\nMAX COMBO :\nPERFECT :\nGOOD :\nMISS : "
+  m_Text: "\t\t   RESULT\nSCORE :\nMAX COMBO :\nPERFECT :\nGOOD :\nMISS : "
 --- !u!222 &200035500
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1273,11 +1273,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2072727292}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -252.89, y: 443.14}
-  m_SizeDelta: {x: 1414.21, y: 193.72}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1414.21, y: 193.71997}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &516364555
 MonoBehaviour:
   m_ObjectHideFlags: 0

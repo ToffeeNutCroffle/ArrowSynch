@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
     public void ResultUI()
     {
         gameEnd=true;
-        resultText.text="         RESULT\n"+"SCORE : "+score+"\nMAX COMBO : "+maxCombo+"\nPERFECT : "+GameManager.instance.perfect+
+        resultText.text="          RESULT\n"+"SCORE : "+score+"\nMAX COMBO : "+maxCombo+"\nPERFECT : "+GameManager.instance.perfect+
         "\nGOOD : "+good+"\nMISS : "+miss;
         resultScreen.SetActive(gameEnd);
     }

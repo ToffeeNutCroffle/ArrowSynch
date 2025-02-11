@@ -413,7 +413,7 @@ MonoBehaviour:
   systemtime: 0
   beat: 0
   gameEnd: 0
-  inGameScore: {fileID: 0}
+  inGameScore: {fileID: 2035705276}
   score: 0
   pause: 27
   pauseOn: 0
@@ -3379,9 +3379,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 97355226}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -141.62, y: 450.81}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 818.38, y: -89.19}
   m_SizeDelta: {x: 1636.77, y: 178.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2035705276
