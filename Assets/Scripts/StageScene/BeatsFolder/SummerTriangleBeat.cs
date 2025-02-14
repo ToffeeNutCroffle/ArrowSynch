@@ -8,7 +8,7 @@ public class SummerTriangleBeat : MonoBehaviour
     void Start()
     {
         StartCoroutine(LeftArrow(0.00f));
-       StartCoroutine(LeftArrow(0.17f));
+        StartCoroutine(LeftArrow(0.17f));
         StartCoroutine(UpArrow(0.34f));
         StartCoroutine(RightArrow(0.69f));
         StartCoroutine(DownArrow(1.15f));
@@ -365,7 +365,7 @@ public class SummerTriangleBeat : MonoBehaviour
         StartCoroutine(RightArrow(98.03f));
         StartCoroutine(LeftArrow(98.24f));
         StartCoroutine(LeftArrow(98.42f));
-        
+
         StartCoroutine(UpArrow(98.78f));
         StartCoroutine(DownArrow(99.09f));
         StartCoroutine(LeftArrow(99.44f));

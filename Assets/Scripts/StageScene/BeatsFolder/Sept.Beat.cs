@@ -6,9 +6,18 @@ public class SeptBeat : MonoBehaviour
 {
     void Start()
     {
-        //이 안에 비트 작성
-        //StartCorutine(스폰할노트(시간(int면 숫자만 float면 뒤에 f)));
-        StartCoroutine(RightArrow(0));
+        StartCoroutine(RightArrow(0.17f));
+        StartCoroutine(UpArrow(0.77f));
+        StartCoroutine(LeftArrow(1.12f));
+        StartCoroutine(DownArrow(1.47f));
+        StartCoroutine(DownArrow(1.80f));
+        StartCoroutine(LeftArrow(2.02f));
+        StartCoroutine(RightArrow(2.86f));
+        StartCoroutine(UpArrow(3.20f));
+        StartCoroutine(DownArrow(3.56f));
+        StartCoroutine(LeftArrow(3.91f));
+        StartCoroutine(RightArrow(4.12f));
+
 
     }
     public IEnumerator LeftArrow(float time)

@@ -384,6 +384,7 @@ GameObject:
   - component: {fileID: 47396400}
   - component: {fileID: 47396399}
   - component: {fileID: 47396401}
+  - component: {fileID: 47396402}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -454,6 +455,18 @@ MonoBehaviour:
   goodeffect: {fileID: 1272039926}
   perfecteffect: {fileID: 2070845395}
   misseffect: {fileID: 467768331}
+--- !u!114 &47396402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47396398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe9ec8823b1c9145a4224ce0f201457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &113914826
 GameObject:
   m_ObjectHideFlags: 0
@@ -1206,7 +1219,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8024ae6686fce2742815b7db7cca3420, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9055a5ffa6d00354990a5c0e47d89f0e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

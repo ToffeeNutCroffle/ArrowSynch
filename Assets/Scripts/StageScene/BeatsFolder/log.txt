@@ -1,2 +1,7 @@
-        StartCoroutine(RightArrow(0.01f));
-        StartCoroutine(UpArrow(0.76f));
+        StartCoroutine(LeftArrow(0.03f));
+        StartCoroutine(UpArrow(0.35f));
+        StartCoroutine(LeftArrow(0.71f));
+        StartCoroutine(UpArrow(1.05f));
+        StartCoroutine(DownArrow(1.36f));
+        StartCoroutine(DownArrow(1.52f));
+        StartCoroutine(RightArrow(1.83f));

@@ -9,33 +9,27 @@ public class WindowBeat : MonoBehaviour
     {
         //이 안에 비트 작성
         //StartCorutine(스폰할노트(시간(int면 숫자만 float면 뒤에 f)));
-        StartCoroutine(LeftSpawn(0));
-        StartCoroutine(UpSpawn(0.5f));
-        StartCoroutine(LeftSpawn(0.9f));
-        StartCoroutine(UpSpawn(1.3f));
-        StartCoroutine(LeftSpawn(1.6f));
-        StartCoroutine(LeftSpawn(1.8f));
-        StartCoroutine(UpSpawn(2.2f));
+        StartCoroutine(LeftArrow(0.00f));
     }
-    public IEnumerator LeftSpawn(float time)
+    public IEnumerator LeftArrow(float time)
     {
         yield return new WaitForSeconds(time);
         GameObject LeftArrow = BeatController.instance.PoolLeft.Get();
     }
 
-    public IEnumerator RightSpawn(float time)
+    public IEnumerator RightArrow(float time)
     {
         yield return new WaitForSeconds(time);
         GameObject RightArrow = BeatController.instance.PoolRight.Get();
     }
 
-    public IEnumerator UpSpawn(float time)
+    public IEnumerator UpArrow(float time)
     {
         yield return new WaitForSeconds(time);
         GameObject UptArrow = BeatController.instance.PoolUp.Get();
     }
 
-    public IEnumerator DownSpawn(float time)
+    public IEnumerator DownArrow(float time)
     {
         yield return new WaitForSeconds(time);
         GameObject DownArrow = BeatController.instance.PoolDown.Get();
