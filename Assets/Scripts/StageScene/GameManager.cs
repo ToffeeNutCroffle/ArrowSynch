@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject pauseScreen;
     public GameObject resultScreen;
+
+    public GameObject FullCombo;
     // Start is called before the first frame update
     void Start()
     {
@@ -94,6 +96,14 @@ public class GameManager : MonoBehaviour
 
     public void ResultUI()
     {
+        if(miss == 0)
+        {
+            FullCombo.SetActive(true);
+        }
+        else
+        {
+            FullCombo.SetActive(false);
+        }
         gameEnd=true;
         resultText.text="          RESULT\n"+"SCORE : "+score+"\nMAX COMBO : "+maxCombo+"\nPERFECT : "+GameManager.instance.perfect+
         "\nGOOD : "+good+"\nMISS : "+miss;
