@@ -45,33 +45,30 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void Perfect(float x,float y)
+    public void Perfect()
     {
         perfect+=1;
         combo+=1;
         score+=500;
         GameObject Effect = BeatController.instance.PoolPerfect.Get();
         Effect.GetComponent<EffectPool>().death=false;
-        Effect.transform.position=new Vector3(0,0,1);
     }
     
-    public void Miss(float x, float y)
+    public void Miss()
     {
         miss+=1;
         combo=0;
         GameObject Effect = BeatController.instance.PoolMiss.Get();
         Effect.GetComponent<EffectPool>().death=false;
-        Effect.transform.position=new Vector3(0,0,1);
     }
 
-    public void Good(float x, float y)
+    public void Good()
     {
         good+=1;
         combo+=1;
         score+=300;
         GameObject Effect = BeatController.instance.PoolGood.Get();
         Effect.GetComponent<EffectPool>().death=false;
-        Effect.transform.position=new Vector3(0,0,1);
     }
 
     public void CheckPause()

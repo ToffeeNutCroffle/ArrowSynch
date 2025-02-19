@@ -65,7 +65,7 @@ public class NoteController : MonoBehaviour
 
         else if(other.tag == "Destroy")
         { 
-            GameManager.instance.Miss(this.transform.position.x, this.transform.position.y);
+            GameManager.instance.Miss();
             ResetPosition(state);
             this.isFirst=false;
             Pool.Release(this.gameObject);
@@ -88,33 +88,33 @@ public class NoteController : MonoBehaviour
             {
                 if(this.transform.position.y==0)
                 {
-                    if(Mathf.Abs(this.transform.position.x) >=2 || Mathf.Abs(this.transform.position.x) <= 1)
+                    if(Mathf.Abs(this.transform.position.x) >=2.1 || Mathf.Abs(this.transform.position.x) <= 0.9)
                     {
-                        GameManager.instance.Miss(this.transform.position.x, 0);
+                        GameManager.instance.Miss();
                     }
                     else if(Mathf.Abs(this.transform.position.x) >= 1.8 || Mathf.Abs(this.transform.position.x) <= 1.2)
                     {
-                        GameManager.instance.Good(this.transform.position.x, 0);
+                        GameManager.instance.Good();
                     }
                     else
                     {
-                        GameManager.instance.Perfect(this.transform.position.x, 0);
+                        GameManager.instance.Perfect();
                     }
                 }
 
                 else if(this.transform.position.x==0)
                 {
-                    if(Mathf.Abs(this.transform.position.y)>=2 || Mathf.Abs(this.transform.position.y)<=1)
+                    if(Mathf.Abs(this.transform.position.y)>=2.1 || Mathf.Abs(this.transform.position.y)<= 0.9)
                     {
-                        GameManager.instance.Miss(0, this.transform.position.y);
+                        GameManager.instance.Miss();
                     }
                     else if(Mathf.Abs(this.transform.position.y) >= 1.8 || Mathf.Abs(this.transform.position.y) <= 1.2)
                     {
-                        GameManager.instance.Good(0, this.transform.position.y);
+                        GameManager.instance.Good();
                     }
                     else 
                     {
-                        GameManager.instance.Perfect(0, this.transform.position.y);
+                        GameManager.instance.Perfect();
                     }
                 }  
                

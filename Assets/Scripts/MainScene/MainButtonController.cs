@@ -107,16 +107,46 @@ public class MainButtonController : MonoBehaviour
         
     }
 
+    public void MeetUpGo()
+    {
+        if(MainManager.instance.playingNow!=6)
+        {
+            ButtonColorManager.instance.SetColorBright();            
+            ChangeMusic(6);
+            MainManager.instance.isSelect=true;
+            MainManager.instance.playingNow=6;
+            ButtonColorManager.instance.SetColorDark(6);
+        }
+        
+        else
+        {
+            SceneManager.LoadScene("MeetUpScene");
+        }
+        
+    }
 
+    public void DiveGo()
+    {
+        if(MainManager.instance.playingNow!=7)
+        {
+            ButtonColorManager.instance.SetColorBright();            
+            ChangeMusic(7);
+            MainManager.instance.isSelect=true;
+            MainManager.instance.playingNow=7;
+            ButtonColorManager.instance.SetColorDark(7);
+        }
+        
+        else
+        {
+            SceneManager.LoadScene("DiveScene");
+        }
+        
+    }
+    
     public void ExitButton()
     {
         MainManager.instance.toStart=true;
         MainManager.instance.exitUI.SetActive(true);
-    }
-
-    public void SettingButton()
-    {
-        //TODO-슬라이드 음량조절 캔버스
     }
 
     public void ChangeMusic(int num)

@@ -141,7 +141,7 @@ public class TutorialBeat : MonoBehaviour
         StartCoroutine(LeftSpawn(57.92f));
         StartCoroutine(UpSpawn(58.15f));
         //게임 종료
-        StartCoroutine(GameOver(64f));
+        StartCoroutine(GameOver(63f));
     }
 
     //코루틴 생성

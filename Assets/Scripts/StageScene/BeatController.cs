@@ -10,8 +10,8 @@ public class BeatController : MonoBehaviour
     public int DefaultCapacity = 10;
     public int MaxPoolSize = 15;
 
-    public int EffectCapacity = 7;
-    public int MaxEffect = 10;
+    public int EffectCapacity = 15;
+    public int MaxEffect = 20;
 
     public GameObject goodeffect;
     public GameObject perfecteffect;
@@ -135,7 +135,7 @@ public class BeatController : MonoBehaviour
 
     private GameObject CreateGood()
     {
-        GameObject poolgo = Instantiate(goodeffect, new Vector3(13,13,1),Quaternion.identity);
+        GameObject poolgo = Instantiate(goodeffect, new Vector3(0,0,1),Quaternion.identity);
         poolgo.GetComponent<EffectPool>().Pool = this.PoolGood;
         return poolgo;
     }
@@ -143,7 +143,7 @@ public class BeatController : MonoBehaviour
 
     private GameObject CreatePefect()
     {
-        GameObject poolgo = Instantiate(perfecteffect, new Vector3(13,13,1),Quaternion.identity);
+        GameObject poolgo = Instantiate(perfecteffect, new Vector3(0,0,1),Quaternion.identity);
         poolgo.GetComponent<EffectPool>().Pool = this.PoolPerfect;
         return poolgo;
     }
@@ -151,7 +151,7 @@ public class BeatController : MonoBehaviour
 
     private GameObject CreateMiss()
     {
-        GameObject poolgo = Instantiate(misseffect, new Vector3(13,13,1),Quaternion.identity);
+        GameObject poolgo = Instantiate(misseffect, new Vector3(0,0,1),Quaternion.identity);
         poolgo.GetComponent<EffectPool>().Pool = this.PoolMiss;
         return poolgo;
     }

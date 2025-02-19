@@ -15,6 +15,21 @@ EditorBuildSettings:
     path: Assets/Scenes/TutorialScene.unity
     guid: 03e0cd55efcfcc644ae842bdbd7c09c0
   - enabled: 1
+    path: Assets/Scenes/MeetUpScene.unity
+    guid: 381df11cc6618584884dcd6ed8e750a8
+  - enabled: 1
+    path: Assets/Scenes/SeptScene.unity
+    guid: 525707b42e6b4ae48a8d889ae1d45262
+  - enabled: 1
+    path: Assets/Scenes/WindowScene.unity
+    guid: d45a2a85dac807c47a50f0fd8db31308
+  - enabled: 1
     path: Assets/Scenes/monouiScene.unity
     guid: 47000acb7187ed24f89188d1db9bc4f1
+  - enabled: 1
+    path: Assets/Scenes/DiveScene.unity
+    guid: 8692f9a91b53d46458c45cce6c637a4c
+  - enabled: 1
+    path: Assets/Scenes/SummerTriangleScene.unity
+    guid: 3f59a490699429a459dccd1b5a866cf8
   m_configObjects: {}
